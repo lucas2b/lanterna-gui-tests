@@ -13,6 +13,8 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
 public class Main {
+	
+	//Playing a little bit with Lanterna GUI
 
 	public static void main(String[] args) throws IOException {
 
