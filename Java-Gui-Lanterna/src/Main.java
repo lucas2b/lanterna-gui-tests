@@ -53,8 +53,8 @@ public class Main {
         panel.addComponent(okay);
         
         //------------------------------------ Form submission (calculator)--------------------------------------------------
-        panel.addComponent(new Label(""));
-        panel.addComponent(new Label(""));
+        panel.addComponent(new EmptySpace());
+        panel.addComponent(new EmptySpace());
         panel.addComponent(new Label("Calculator "));
         panel.addComponent(new EmptySpace());
         
@@ -78,6 +78,49 @@ public class Main {
 
         panel.addComponent(new EmptySpace(new TerminalSize(0,0)));
         panel.addComponent(lblOutput);
+        
+      //------------------------------------------------ COMBO BOX ---------------------------------------------------------
+        panel.addComponent(new Label("Combo box:"));
+        panel.addComponent(new Label(""));
+        
+        ComboBox<String> comboBox = new ComboBox<String>();
+        comboBox.addItem("Pelotas");
+        comboBox.addItem("Porto Alegre");
+        comboBox.addItem("Alegrete");
+        comboBox.addItem("Lajeado");
+        
+        comboBox.setPreferredSize(new TerminalSize(15, 1));
+        panel.addComponent(comboBox);
+        panel.addComponent(new EmptySpace());
+        Button bt2 = new Button("Show Selection", new Runnable() {
+			
+			@Override
+			public void run() {
+				JOptionPane.showMessageDialog(null, comboBox.getSelectedItem());
+				
+			}
+		});
+        bt2.addTo(panel);
+        panel.addComponent(new Label(""));
+        panel.addComponent(new Label(""));
+      //------------------------------------------------- CHECK BOX --------------------------------------------------------
+        
+        panel.addComponent(new Label("Check Box:"));
+        panel.addComponent(new Label(""));
+        CheckBoxList<String> checkBox = new CheckBoxList<String>();
+        checkBox.addItem("Maiara");
+        checkBox.addItem("Lucas");
+        checkBox.addItem("Joao");
+        checkBox.addItem("Pedro");
+        Button bt3 = new Button("Show Selection", new Runnable() {
+			
+			@Override
+			public void run() {
+				JOptionPane.showMessageDialog(null, "Selected: "+checkBox.getSelectedItem());
+				
+			}
+		}).addTo(panel);
+        panel.addComponent(checkBox);
         
         
         //--------------------------------- Create window to hold the panel (gray color) ------------------------------------
