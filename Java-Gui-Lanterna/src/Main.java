@@ -28,6 +28,7 @@ public class Main {
 		Panel panel = new Panel();
         panel.setLayoutManager(new com.googlecode.lanterna.gui2.GridLayout(2));
         //teste
+        //teste commit
         
         //---------------------------------- Components inside the panel -----------------------------------------
         panel.addComponent(new Label("Simple form "));
