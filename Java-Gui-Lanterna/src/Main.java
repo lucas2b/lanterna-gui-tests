@@ -1,23 +1,14 @@
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-
 import javax.swing.JOptionPane;
-
-import com.googlecode.lanterna.SGR;
-import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
-import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.gui2.*;
-import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
-import com.googlecode.lanterna.screen.VirtualScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import com.googlecode.lanterna.terminal.TerminalResizeListener;
 
 public class Main {
 	
@@ -26,7 +17,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		//------------------------------ Setup terminal and screens layers ----------------------------------------
-		Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(100, 40)).createTerminal();
+		Terminal terminal = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(160, 45)).createTerminal();
 		Screen screen = new TerminalScreen(terminal);		
 		screen.startScreen();
 		
