@@ -17,6 +17,7 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
 import view.Painel1;
+import view.PainelTopo;
 
 public class Main {
 	
@@ -30,39 +31,25 @@ public class Main {
 		screen.startScreen();
 		
 		
-		
-		//----------------------------------------ADICIONAR COMPONENTES -----------------------------------------------
-		
-		
+		//----------------------------------------ADICIONAR PAINEIS -----------------------------------------------
 		
 		Panel painel1 = new Painel1().getPainel();
-		
-		
+		Panel painelTopo = new PainelTopo().getPainel();
 		
 		
 		//----------------------------------------FIM DA ÁREA DE COMPONENTES ------------------------------------------
 		
-
 		
         //------------------------------------------------ JANELAS ----------------------------------------------------
-        BasicWindow centro = new BasicWindow("JANELA");
-        centro.setHints(Arrays.asList(Window.Hint.CENTERED));
-       
-        
-        BasicWindow topo = new BasicWindow();
+		BasicWindow topo = new BasicWindow(); //janela do topo servindo de menu horizontal
         topo.setHints(Arrays.asList(Window.Hint.FIXED_POSITION));
         topo.setPosition(new TerminalPosition(0, 0));
-        
-        Panel pan = new Panel();
-        pan.setLayoutManager(new com.googlecode.lanterna.gui2.LinearLayout(Direction.HORIZONTAL));
-        pan.addComponent(new Label("MENU 1 | MENU 2 | MENU 3 | MENU 4 | MENU 5"));
-        pan.addComponent(new Label("agora vai"));
-        topo.setComponent(pan);
-        
-        
-        //Setando painel 1
-        centro.setComponent(painel1);
-        
+        topo.setComponent(painelTopo);
+		
+		
+		BasicWindow centro = new BasicWindow("JANELA"); //janela do centro, corpo do programa
+        centro.setHints(Arrays.asList(Window.Hint.CENTERED));
+        centro.setComponent(painel1);        
 
         //----------------------------------------- Create GUI and start GUI ------------------------------------------------
         MultiWindowTextGUI gui = new MultiWindowTextGUI(screen, new DefaultWindowManager(), new EmptySpace(TextColor.ANSI.BLUE));
