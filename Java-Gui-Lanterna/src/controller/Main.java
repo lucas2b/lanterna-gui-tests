@@ -46,15 +46,16 @@ public class Main {
         topo.setPosition(new TerminalPosition(0, 0));
         topo.setComponent(painelTopo);
 		
-		
 		BasicWindow centro = new BasicWindow("JANELA"); //janela do centro, corpo do programa
         centro.setHints(Arrays.asList(Window.Hint.CENTERED));
-        centro.setComponent(painel1);        
+        centro.setComponent(painel1);
+        
 
         //----------------------------------------- Create GUI and start GUI ------------------------------------------------
         MultiWindowTextGUI gui = new MultiWindowTextGUI(screen, new DefaultWindowManager(), new EmptySpace(TextColor.ANSI.BLUE));
         gui.addWindow(topo);
         gui.addWindowAndWait(centro);
+        
         
 		
 	}
